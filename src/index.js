@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect, Provider } from 'react-redux';
 
+import style from './app.css';
+
 require.ensure(
 	[],
 	() => {
@@ -16,9 +18,13 @@ class Counter extends Component {
 		let { count, countIncrease, countDecrease } = this.props;
 		return (
 			<div>
-				<div>{count}</div>
-				<button onClick={countIncrease}>Increase</button>
-				<button onClick={countDecrease}>Decrease</button>
+				<div className={style.count}>{count}</div>
+				<button className={style.button} onClick={countIncrease}>
+					Increase
+				</button>
+				<button className={style.button} onClick={countDecrease}>
+					Decrease
+				</button>
 			</div>
 		);
 	}
@@ -36,7 +42,7 @@ let HOCCounter = connect(state => state, { countIncrease, countDecrease })(
 	Counter
 );
 
-let renderApp = (store) => {
+let renderApp = store => {
 	ReactDOM.render(
 		<Provider store={store}>
 			<HOCCounter />

@@ -16,6 +16,15 @@ class ChunkManifestReplacePlugin {
 					(source, chunk) => {
 						originalChunkFileName = output.chunkFilename;
 						output.chunkFilename = '__CHUNK_MANIFEST__';
+						compilation.chunks.forEach(chunk => { // get all chunks information
+							console.log(
+								chunk.name,
+								chunk.id,
+								chunk.canBeInitial()
+									? 'Initial chunk'
+									: 'Runtime chunk'
+							);
+						});
 						return source;
 					}
 				);

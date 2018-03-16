@@ -112,7 +112,7 @@
 /******/ 				if (__webpack_require__.nc) {
 /******/ 					script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 				}
-/******/ 				script.src = __webpack_require__.p + "" + ({"1":"configStore"}[chunkId]||chunkId) + ".js";
+/******/ 				script.src = __webpack_require__.p + "js/" + ({"1":"configStore"}[chunkId]||chunkId) + ".js";
 /******/ 				var timeout = setTimeout(function(){
 /******/ 					onScriptComplete({ type: 'timeout', target: script });
 /******/ 				}, 120000);
@@ -194,8 +194,9 @@
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -213,6 +214,10 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _reactRedux = __webpack_require__(24);
 
+var _app = __webpack_require__(64);
+
+var _app2 = _interopRequireDefault(_app);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -222,7 +227,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 __webpack_require__.e(/* require.ensure | configStore */ 1).then((function () {
-	var store = __webpack_require__(64).default;
+	var store = __webpack_require__(69).default;
 	renderApp(store);
 }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 
@@ -248,17 +253,17 @@ var Counter = function (_Component) {
 				null,
 				_react2.default.createElement(
 					'div',
-					null,
+					{ className: _app2.default.count },
 					count
 				),
 				_react2.default.createElement(
 					'button',
-					{ onClick: countIncrease },
+					{ className: _app2.default.button, onClick: countIncrease },
 					'Increase'
 				),
 				_react2.default.createElement(
 					'button',
-					{ onClick: countDecrease },
+					{ className: _app2.default.button, onClick: countDecrease },
 					'Decrease'
 				)
 			);
@@ -288,6 +293,33 @@ var renderApp = function renderApp(store) {
 	), document.getElementById('target'));
 };
 
+/***/ }),
+
+/***/ 64:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(65);
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(67)(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
 /***/ })
-/******/ ]);
-//# sourceMappingURL=main.js.map
+
+/******/ });
+//# sourceMappingURL=../smap/main.70518edc0275dbbec9ee.map
